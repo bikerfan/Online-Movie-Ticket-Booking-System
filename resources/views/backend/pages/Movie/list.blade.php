@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>Product List</h1>
+    <h1>Movie List</h1>
 
     @if(session()->has('message'))
         <p class="alert alert-success">{{session()->get('message')}}</p>
