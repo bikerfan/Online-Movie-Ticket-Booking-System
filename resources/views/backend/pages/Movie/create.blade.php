@@ -26,9 +26,16 @@
         <input required name="duration" type="text" class="form-control" id="name" placeholder="Enter Movie duration">
     </div>
 
+    
+
     <div class="form-group">
-        <label for="name">Enter Movie Schedule</label>
-        <input required name="schedule" type="text" class="form-control" id="name" placeholder="Enter Movie schedule">
+        <label for="">Select Status</label>
+        <select name="schedule" id="" class="form-control">
+            <option value="9am-12pm">9am-12pm</option>
+            <option value="3pm-6pm">3pm-6pm</option>
+            <option value="7pm-10pm">7pm-10pm</option>
+           
+        </select>
     </div>
 
     <div class="form-group">
