@@ -54,11 +54,12 @@ class MovieController extends Controller
             // 'user_id' => auth()->user()->id,
             'price' => $request->price,
             'status' => $request->status,
-            'description' => $request->description
+            'description' => $request->description,
+            'schedule'=>$request->schedule,
+            'duration'=>$request->duration,
         ]);
 
         //convert
-        // INSERT INTO products (category_id,name) VALUES($request->category_id,$request->product_name)
         // notify()->success('Product Created successfully.');
         return redirect()->route('Movie.list')->with('message','Movie Created successfully.');
 

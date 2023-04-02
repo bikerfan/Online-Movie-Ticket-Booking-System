@@ -23,6 +23,8 @@
             <th scope="col">Price</th>
             <th scope="col">Category Name</th>
             <th scope="col">Status</th>
+            <th scope="col">Schedule</th>
+            <th scope="col">Duration</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -38,7 +40,9 @@
             <td>{{$data->name}}</td>
             <td>{{$data->price}} BDT</td>
             <td>{{$data->categoryRelation->name}}</td>
-            <td>{{$data->stock}}</td>
+            <td>{{$data->status}}</td>
+            <td>{{$data->schedule}}</td>
+            <td>{{$data->duration}}</td>
             <td>
                 <a href="{{route('admin.Movie.view',$data->id)}}" class="btn btn-primary">View</a>
                 <a href="{{route('Movie.edit',$data->id)}}" class="btn btn-info">Edit</a>
