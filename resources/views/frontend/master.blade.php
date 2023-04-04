@@ -35,7 +35,7 @@
    <link href="https://blockbusterbd.com/assets/web/css/customize.css" rel="stylesheet">
 
    <link rel="stylesheet" type="text/css" href="https://blockbusterbd.com/assets/web/css/jquery-ui.css">
-
+   @notifyCss
    <script type="text/javascript">
       var webURL = "https://blockbusterbd.com";
    </script>
@@ -89,6 +89,8 @@
 
 <body>
    @include('frontend.fixed.header')
+   @include('notify::components.notify')
+
    <div class="loaderwhole">
       <div class="centerload"></div>
    </div>
@@ -126,7 +128,7 @@
 
 
 
-   <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+   <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->@notifyJs
    <script src="https://blockbusterbd.com/assets/web/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
    <script src="https://blockbusterbd.com/assets/web/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
    <script src="https://blockbusterbd.com/assets/web/js/revolution_func.js"></script>

@@ -24,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[WebsiteController::class,'web'])->name('webhome');
 Route::get('/web-login',[WebsiteController::class,'weblogin'])->name('web.login');
+Route::post('/do-login',[WebsiteController::class,'dologin'])->name('do.login');
 Route::get('/web-registration',[WebsiteController::class,'webregistration'])->name('web.registration');
+Route::post('/do-registration',[WebsiteController::class,'doregistration'])->name('do.registration');
 
 
 

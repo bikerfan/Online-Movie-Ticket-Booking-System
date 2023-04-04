@@ -24,8 +24,8 @@
                                 <hr>
                             </div>
 
-                            <form method="POST" action="#">
-                                <input type="hidden" name="_token" value="gr8xSr5Xj0CmeG2IdBI5K7zAl6JA3qJkF2xQL0aJ">
+                            <form method="POST" action="{{route('do.registration')}}">
+                                @csrf
                                 <div class="form-group row">
                                     <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 

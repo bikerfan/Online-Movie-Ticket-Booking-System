@@ -27,8 +27,8 @@
                                             <div class="text-center">
                                                 <h1 class="h4 text-gray-900 mb-4">Login To Your Account</h1>
                                             </div>
-                                            <form class="form-horizontal" role="form" method="POST" action="#">
-                                                <input type="hidden" name="_token">
+                                            <form class="form-horizontal" role="form" method="POST" action="{{route('do.login')}}">
+                                                @csrf 
 
                                                 <div class="form-group">
                                                     <!-- <label for="email" class="col-md-4 control-label">E-Mail Address</label> -->
