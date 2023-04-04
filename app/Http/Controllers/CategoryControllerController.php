@@ -34,6 +34,8 @@ class CategoryControllerController extends Controller
         ]);
 
 //        return redirect()->route('category.list');
+notify()->success('Category Created successfully.');
+
         return redirect()->route('category.list');
 
     }

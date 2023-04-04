@@ -66,21 +66,18 @@
                   <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                   <ul>
                      <li>
-                        <a href="https://blockbusterbd.com">Home</a>
+                        <a href="{{route('webhome')}}">Home</a>
                      </li>
                      <li class="submenu">
                         <a href="javascript:void(0);" class="show-submenu">Movies <i class="icon-down-open-mini"></i></a>
                         <ul>
                            <li><a href="https://blockbusterbd.com/now-showing" class="common-loader">Now Showing</a></li>
-                           <li><a href="https://blockbusterbd.com/next-arrival" class="common-loader">Upcoming</a></li>
-                           <li><a href="https://blockbusterbd.com/archives" class="common-loader">Archive</a></li>
+                           <li><a href="#" class="common-loader">Upcoming</a></li>
+                           <li><a href="#" class="common-loader">Archive</a></li>
                         </ul>
                      </li>
                      <li><a href="https://blockbusterbd.com/schedule" class="common-loader">Schedule</a></li>
-                     <li><a href="https://blockbusterbd.com/club-royale" class="common-loader">Club Royale</a></li>
-                     <li><a href="https://blockbusterbd.com/fan-club" class="common-loader">Fan Club</a></li>
                      <li><a href="https://blockbusterbd.com/ticket-price" class="common-loader">Ticket Price</a></li>
-                     <li><a href="https://blockbusterbd.com/career" class="common-loader">Career</a></li>
                      <li><a href="https://blockbusterbd.com/contact-us" class="common-loader">Contact us</a></li>
                   </ul>
                </div>

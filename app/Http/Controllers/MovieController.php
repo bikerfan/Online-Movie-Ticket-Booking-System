@@ -60,8 +60,8 @@ class MovieController extends Controller
         ]);
 
         //convert
-        // notify()->success('Product Created successfully.');
-        return redirect()->route('Movie.list')->with('message','Movie Created successfully.');
+        notify()->success('Movie Created successfully.');
+        return redirect()->route('Movie.list');
 
 
     }
@@ -72,9 +72,13 @@ class MovieController extends Controller
              if($test)
              {
                  $test->delete();
-                 return redirect()->back()->with('message','Movie deleted successfully.');
+                 notify()->success('Delete Successfully');
+
+                 return redirect()->back();
              }else{
-                 return redirect()->back()->with('error','Movie not found.');
+                notify()->error('Movie not found.');
+
+                 return redirect()->back();
              }
 
 

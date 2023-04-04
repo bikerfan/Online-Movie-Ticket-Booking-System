@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -10,13 +11,15 @@ class HomeController extends Controller
     public function home()
     {
 
-        return view('backend.master');
+        return view('backend.pages.dashboard');
     }
 
     public function user()
     {
 
-        return view('backend.fixed.user');
+        $data=User::where('role','user')->get();
+        // dd($data);
+        return view('backend.pages.user',compact('data'));
     }
     public function movie_list()
     {
