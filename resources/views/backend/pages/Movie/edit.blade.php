@@ -25,6 +25,24 @@
             <input value="{{$product->price}}" required name="price" type="number" class="form-control" id="price" placeholder="Enter Movie Ticket Price">
         </div>
         
+        <div class="form-group">
+        <label for="name">Enter Movie Duration</label>
+        <input required value="{{$product->duration}}" name="duration" type="text" class="form-control" id="name" placeholder="Enter Movie duration">
+    </div>
+
+    
+
+    <div class="form-group">
+        <label for="">Select Status</label>
+        <select  name="schedule" id="" class="form-control">
+            <option  @if($product->schedule=='9pm-12pm') selected @endif value="9pm-12pm">9pm-12pm</option>
+            <option  @if($product->schedule=='3pm-6pm') selected @endif value="3pm-6pm">3pm-6pm</option>
+            <option  @if($product->schedule=='7pm-10pm') selected @endif value="7pm-10pm">7pm-10pm</option>
+
+          
+           
+        </select>
+    </div>
 
         <div class="form-group">
             <label for="name">Description</label>

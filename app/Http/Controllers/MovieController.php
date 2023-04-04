@@ -124,7 +124,9 @@ class MovieController extends Controller
             'category_id' => $request->category_id,
             'price' => $request->price,
             'status' => $request->status,
-            'description' => $request->description
+            'description' => $request->description,
+            'schedule'=>$request->schedule,
+            'duration'=>$request->duration,
         ]);
 
         return redirect()->route('Movie.list')->with('message','Update success.');
