@@ -128,8 +128,9 @@ class MovieController extends Controller
             'schedule'=>$request->schedule,
             'duration'=>$request->duration,
         ]);
+        notify()->success('Update Success');
 
-        return redirect()->route('Movie.list')->with('message','Update success.');
+        return redirect()->route('Movie.list');
 
     }
 

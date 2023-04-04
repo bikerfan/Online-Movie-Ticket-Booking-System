@@ -19,23 +19,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::post('/do-login', [HomeController::class, 'doLogin'])->name('do.login');
+Route::group(['prefix'=>'admin'],function (){
 
 
+Route::get('/logout',[HomeController::class,'logout'])->name('logout');
 
-   Route::get('/',[HomeController::class,'home'])->name('dashboard');
-   Route::get('/user',[HomeController::class,'user'])->name('user');
-   Route::get('/movie/list',[HomeController::class,'movie_list'])->name('movie.list');
-   Route::get('/categories', [CategoryControllerController::class, 'list'])->name('category.list');
-   Route::get('/category/create', [CategoryControllerController::class, 'createForm'])->name('category.create');
-   Route::post('/category/store', [CategoryControllerController::class, 'store'])->name('category.store');
 
-   Route::get('/Movie/list', [MovieController::class, 'list'])->name('Movie.list');
-   Route::get('/Movie/create', [MovieController::class, 'create'])->name('Movie.create');
-   Route::post('/Movie/store', [MovieController::class, 'store'])->name('Movie.store');
+Route::get('/', [HomeController::class, 'home'])->name('dashboard');
+Route::get('/user', [HomeController::class, 'user'])->name('user');
+Route::get('/movie/list', [HomeController::class, 'movie_list'])->name('movie.list');
+Route::get('/categories', [CategoryControllerController::class, 'list'])->name('category.list');
+Route::get('/category/create', [CategoryControllerController::class, 'createForm'])->name('category.create');
+Route::post('/category/store', [CategoryControllerController::class, 'store'])->name('category.store');
 
-   Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct'])->name('admin.Movie.delete');
-   Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
-   Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');
-   Route::put('/Movie/update/{product_id}', [MovieController::class, 'update'])->name('Movie.update');
+Route::get('/Movie/list', [MovieController::class, 'list'])->name('Movie.list');
+Route::get('/Movie/create', [MovieController::class, 'create'])->name('Movie.create');
+Route::post('/Movie/store', [MovieController::class, 'store'])->name('Movie.store');
 
-   
+Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct'])->name('admin.Movie.delete');
+Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
+Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');
+Route::put('/Movie/update/{product_id}', [MovieController::class, 'update'])->name('Movie.update');
+});
