@@ -40,7 +40,7 @@ class MovieController extends Controller
         {
             // generate name
             $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
-            $request->file('image')->storeAs('/uploads',$fileName);
+            $request->file('image')->move(public_path('/uploads'),$fileName);
         }
 // dd($fileName);
 

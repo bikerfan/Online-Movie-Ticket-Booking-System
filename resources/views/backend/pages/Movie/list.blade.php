@@ -35,7 +35,7 @@
             <th scope="row">{{$data->id}}</th>
             <td>
 
-                <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="product_image">
+                <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="Movie_image">
             </td>
             <td>{{$data->name}}</td>
             <td>{{$data->price}} BDT</td>
