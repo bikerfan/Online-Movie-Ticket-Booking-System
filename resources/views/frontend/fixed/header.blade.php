@@ -32,12 +32,20 @@
                            <a href="https://blockbusterbd.com/user/registration"><button type="button">Registration</button></a> -->
                      <div class="menuDrop">
                         <ul>
-                           <li>
-                              <a href="{{route('web.login')}}">Login</a>
-                           </li>
-                           <li>
-                              <a href="{{route('web.registration')}}">Registration</a>
-                           </li>
+                        @auth()
+                            <li class="nav-item"> <a href="#" class="nav-item nav-link"> {{ auth()->user()->name}}
+                                   
+                                </a></li>
+                            <li class="nav-item"> <a href="{{route('user.logout')}}" class="nav-item nav-link"> Log Out</a></li>
+                            @else
+                            <li>
+                               <a href="{{route('web.login')}}">Login</a>
+                            </li>
+                            <li>
+                               <a href="{{route('web.registration')}}">Registration</a>
+                            </li>
+                           
+                            @endauth
                         </ul>
                      </div>
 

@@ -27,7 +27,7 @@
                                             <div class="text-center">
                                                 <h1 class="h4 text-gray-900 mb-4">Login To Your Account</h1>
                                             </div>
-                                            <form class="form-horizontal" role="form" method="POST" action="{{route('do.login')}}">
+                                            <form class="form-horizontal" role="form" method="POST" action="{{route('websitelogin')}}">
                                                 @csrf 
 
                                                 <div class="form-group">

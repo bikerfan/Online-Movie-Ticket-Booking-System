@@ -20,9 +20,9 @@ class WebsiteController extends Controller
 
         return view('frontend.pages.login');
     }
-    public function dologin(Request $request)
+    public function websitelogin(Request $request)
     {
-                dd($request->all());
+                // dd($request->all());
 
         $validate = Validator::make($request->all(), [
             'email' => 'required',
@@ -37,9 +37,10 @@ class WebsiteController extends Controller
         $credentials = $request->only(['email', 'password']);
         if (auth()->attempt($credentials)) {
             notify()->success('Login Success');
-            return redirect()->back();
+            return redirect()->route('webhome');
         }
-        return redirect()->back()->with('Invalid Credentials');
+        notify()->error('Login fail,Invalid Credentials');
+        return redirect()->back();
     }
     public function webregistration()
     {
@@ -57,9 +58,11 @@ class WebsiteController extends Controller
             notify()->error($validate->getMessageBag());
             return redirect()->back();
         }
+        // dd($request->all());
         User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'role' =>'user',
             'phone' => $request->contact_no,
             'password' => bcrypt($request->password),
             'password_confirmation' => bcrypt($request->password_confirmation),
@@ -82,5 +85,11 @@ class WebsiteController extends Controller
         }
         notify()->error('invalid password');
         return redirect()->back();
+    }
+    public function logout()
+    {
+        auth()->logout();
+        notify()->success('Logout Success.');
+        return redirect()->route('webhome')->with('Logout Success.');
     }
 }

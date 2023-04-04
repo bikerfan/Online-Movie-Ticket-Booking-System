@@ -24,14 +24,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[WebsiteController::class,'web'])->name('webhome');
 Route::get('/web-login',[WebsiteController::class,'weblogin'])->name('web.login');
-Route::post('/do-login',[WebsiteController::class,'dologin'])->name('do.login');
+Route::post('/weblogin',[WebsiteController::class,'websitelogin'])->name('websitelogin');
 Route::get('/web-registration',[WebsiteController::class,'webregistration'])->name('web.registration');
 Route::post('/do-registration',[WebsiteController::class,'doregistration'])->name('do.registration');
 
 
 
-Route::get('/login', [HomeController::class, 'login'])->name('login');
-Route::post('/do-login', [HomeController::class, 'doLogin'])->name('do.login');
+Route::group(['middleware' => 'auth'], function () {
+    
+
+    Route::get('/logout', [WebsiteController::class, 'logout'])->name('user.logout');
+    Route::get('/profile',[WebsiteController::class,'profile'])->name('user.profile');
+    Route::put('/profile/update',[WebsiteController::class,'updateProfile'])->name('profile.update');
+
+});
+
+
+
+Route::get('/admin/login', [HomeController::class, 'login'])->name('login');
+Route::post('/admin/do-login', [HomeController::class, 'doLogin'])->name('do.login');
+
+
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
 
