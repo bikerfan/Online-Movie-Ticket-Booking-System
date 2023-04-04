@@ -7,6 +7,7 @@ use App\Http\Controllers\MovieController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+Route::get('/',[WebsiteController::class,'web'])->name('webhome');
+Route::get('/web-login',[WebsiteController::class,'weblogin'])->name('web.login');
+Route::get('/web-registration',[WebsiteController::class,'webregistration'])->name('web.registration');
+
+
+
 Route::get('/login', [HomeController::class, 'login'])->name('login');
 Route::post('/do-login', [HomeController::class, 'doLogin'])->name('do.login');
-Route::group(['prefix'=>'admin'],function (){
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
 
 
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');
