@@ -31,6 +31,11 @@
                     <span data-feather="file" class="align-text-bottom"></span>
                    Movie Catagory
                 </a>
+                <li class="nav-item">
+                <a class="nav-link" href="{{route('category.list')}}">
+                    <span data-feather="file" class="align-text-bottom"></span>
+                   Seat Catagory
+                </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
