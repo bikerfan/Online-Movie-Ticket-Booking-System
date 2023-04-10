@@ -114,4 +114,22 @@ class WebsiteController extends Controller
        
         return view('frontend.pages.details',compact('movie'));
     }
+
+    public function profile()
+    {
+        return view('frontend.pages.profile');
+    }
+    public function updateProfile(Request $request)
+    {
+       //validation
+
+        $user=User::find(auth()->user()->id);
+        $user->update([
+           'name'=>$request->name,
+           'phone'=>$request->phone,
+        ]);
+
+        notify()->success('User profile updated.');
+        return redirect()->back();
+    }
 }

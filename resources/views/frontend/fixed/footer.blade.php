@@ -42,9 +42,8 @@
                     <li>customercare@onlinemovieticket.com</li>
                 </ul>
 
-                <p><span style="font-size:18px"><a href="javascript:void(0)"><span style="color:#ffff99">+88-02-9824007</span></a></p>
-                <p><span style="font-size:18px"><a href="javascript:void(0)"><span style="color:#ffff99">+88-01913399015</span></a></p>
-                <p><span style="font-size:18px"><a href="javascript:void(0)"><span style="color:#ffff99">+88-01913398051</span></a></p>
+                <p><span style="font-size:18px"><a href="javascript:void(0)"><span style="color:#ffff99">01642046852</span></a></p>
+                <p><span style="font-size:18px"><a href="javascript:void(0)"><span style="color:#ffff99">01962836771</span></a></p>
             </div>
 
 
