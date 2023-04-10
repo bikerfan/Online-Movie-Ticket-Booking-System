@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->double('price',10,2)->default(0);
             $table->text('description')->nullable();
-            $table->string('status',10)->default('active');
+            $table->string('status',10);
+            $table->string('director',10);
             $table->string('schedule',20);
             $table->string('duration',20);
             $table->timestamps();

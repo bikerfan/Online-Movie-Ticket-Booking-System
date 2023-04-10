@@ -27,6 +27,9 @@ Route::get('/web-login',[WebsiteController::class,'weblogin'])->name('web.login'
 Route::post('/weblogin',[WebsiteController::class,'websitelogin'])->name('websitelogin');
 Route::get('/web-registration',[WebsiteController::class,'webregistration'])->name('web.registration');
 Route::post('/do-registration',[WebsiteController::class,'doregistration'])->name('do.registration');
+Route::get('/upcomming',[WebsiteController::class,'upcomming'])->name('upcomming');
+Route::get('/nowshowing',[WebsiteController::class,'nowshowing'])->name('nowshowing');
+Route::get('/details/{movie_id}',[WebsiteController::class,'details'])->name('details');
 
 
 
@@ -46,6 +49,8 @@ Route::post('/admin/do-login', [HomeController::class, 'doLogin'])->name('do.log
 
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
+       Route::group(['middleware' => 'CheckAdmin'], function () {
+
 
 
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');
@@ -66,4 +71,5 @@ Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct
 Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
 Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');
 Route::put('/Movie/update/{product_id}', [MovieController::class, 'update'])->name('Movie.update');
+});
 });

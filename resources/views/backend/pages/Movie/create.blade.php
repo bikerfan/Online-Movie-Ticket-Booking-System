@@ -42,6 +42,10 @@
         <label for="price">Enter Movie Ticket Price</label>
         <input required name="price" type="number" class="form-control" id="price" placeholder="Enter Movie Ticket Price">
     </div>
+    <div class="form-group">
+        <label for="price">Enter Movie Director Names</label>
+        <input required name="director" type="text" class="form-control" id="director" placeholder="Enter Movie Director Names">
+    </div>
 
 
     <div class="form-group">
@@ -49,13 +53,13 @@
         <textarea class="form-control" name="description" id=""></textarea>
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="">Select Status</label>
         <select name="status" id="" class="form-control">
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
         </select>
-    </div>
+    </div> -->
 
     <div class="form-group">
         <label for="">Select Category</label>

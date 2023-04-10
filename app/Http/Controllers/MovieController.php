@@ -53,9 +53,10 @@ class MovieController extends Controller
             'image' => $fileName,
             // 'user_id' => auth()->user()->id,
             'price' => $request->price,
-            'status' => $request->status,
+            'status' => 'inactive',
             'description' => $request->description,
             'schedule'=>$request->schedule,
+            'director'=>$request->director,
             'duration'=>$request->duration,
         ]);
 
@@ -130,6 +131,7 @@ class MovieController extends Controller
             'status' => $request->status,
             'description' => $request->description,
             'schedule'=>$request->schedule,
+            'director'=>$request->director,
             'duration'=>$request->duration,
         ]);
         notify()->success('Update Success');

@@ -71,9 +71,8 @@
                      <li class="submenu">
                         <a href="javascript:void(0);" class="show-submenu">Movies <i class="icon-down-open-mini"></i></a>
                         <ul>
-                           <li><a href="https://blockbusterbd.com/now-showing" class="common-loader">Now Showing</a></li>
-                           <li><a href="#" class="common-loader">Upcoming</a></li>
-                           <li><a href="#" class="common-loader">Archive</a></li>
+                           <li><a href="{{route('nowshowing')}}" class="common-loader">Now Showing</a></li>
+                           <li><a href="{{route('upcomming')}}" class="common-loader">Upcoming</a></li>
                         </ul>
                      </li>
                      <li><a href="https://blockbusterbd.com/schedule" class="common-loader">Schedule</a></li>

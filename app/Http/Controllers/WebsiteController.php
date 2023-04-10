@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -91,5 +92,26 @@ class WebsiteController extends Controller
         auth()->logout();
         notify()->success('Logout Success.');
         return redirect()->route('webhome')->with('Logout Success.');
+    }
+    
+    public function upcomming()
+    {
+        $up=Movie::where('status','inactive')->with('categoryRelation')->get();
+        // dd($up);
+        return view('frontend.pages.upcomming',compact('up'));
+    }
+    public function nowshowing()
+    {
+        $up=Movie::where('status','active')->with('categoryRelation')->get();
+        // dd($up);
+        return view('frontend.pages.nowshowing',compact('up'));
+    }
+    public function details($movie_id)
+    {
+        $movie=Movie::find($movie_id);
+        // dd($movie);
+
+       
+        return view('frontend.pages.details',compact('movie'));
     }
 }
