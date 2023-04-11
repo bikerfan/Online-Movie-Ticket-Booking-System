@@ -60,7 +60,7 @@
 
                     <!-- End of Amazing Slider Code -->
                     <div class="row" style="border-top:1px solid #f2f2f2; padding:0 0px 25px 0;margin:0 auto; text-align:center;">
-                        <a href="#">
+                        <a href="{{route('buynow')}}">
                             <img src="https://blockbusterbd.com/uploads/movies/buy_now_button.png">
                         </a>
                     </div>
