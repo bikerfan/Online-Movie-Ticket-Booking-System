@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->string('status',10);
-            $table->string('director',10);
+            $table->string('director',100);
             $table->string('schedule',20);
             $table->string('duration',20);
             $table->timestamps();
