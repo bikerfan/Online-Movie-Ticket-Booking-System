@@ -60,8 +60,12 @@
 
                     <!-- End of Amazing Slider Code -->
                     <div class="row" style="border-top:1px solid #f2f2f2; padding:0 0px 25px 0;margin:0 auto; text-align:center;">
+<<<<<<< HEAD
                         <a href="#">
 
+=======
+                        <a href="{{route('buynow')}}">
+>>>>>>> 01db464a45ea5a6c8d08f0b1d03c1514f32d1146
                             <img src="https://blockbusterbd.com/uploads/movies/buy_now_button.png">
                         </a>
                     </div>

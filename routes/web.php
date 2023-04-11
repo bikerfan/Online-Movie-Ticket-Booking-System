@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryControllerController;
+use App\Http\Controllers\Frontend\BuyNowController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\OrderController;
@@ -31,7 +32,7 @@ Route::get('/upcomming',[WebsiteController::class,'upcomming'])->name('upcomming
 Route::get('/nowshowing',[WebsiteController::class,'nowshowing'])->name('nowshowing');
 Route::get('/ticket/price',[WebsiteController::class,'price'])->name('price');
 Route::get('/details/{movie_id}',[WebsiteController::class,'details'])->name('details');
-
+Route::get('buy/now',[BuyNowController::class,'buynow'])->name('buynow');
 
 
 Route::group(['middleware' => 'auth'], function () {

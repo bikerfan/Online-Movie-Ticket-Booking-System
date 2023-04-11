@@ -88,7 +88,22 @@
                         @endforeach
                     </div>
                 </div>
+<<<<<<< HEAD
                 
+=======
+                <div class="col-md-8" style="padding-top:30px">
+                    <p class="text-center">
+                        <a href="{{route('buynow')}}"class="btn btn-success">
+                            <img class="lazy common-loader" height="200px" src="https://blockbusterbd.com/assets/web/img/Buy-Tickets-Now1.png" alt="" class="w-100">
+                        </a>
+                    </p>
+                    <p class="text-center">
+                        <a href="https://blockbusterbd.com/club-royale">
+                            <img src="https://blockbusterbd.com/assets/web/img/royal_club_icon.png" alt="" class="w-100">
+                        </a>
+                    </p>
+                </div>
+>>>>>>> 01db464a45ea5a6c8d08f0b1d03c1514f32d1146
             </div>
             <!-- End row -->
         </div>
