@@ -13,7 +13,8 @@ class WebsiteController extends Controller
     public function web()
     {
 
-        return view('frontend.pages.home');
+        $up=Movie::all();
+        return view('frontend.pages.home',compact('up'));
     }
 
     public function weblogin()
@@ -109,10 +110,11 @@ class WebsiteController extends Controller
     public function details($movie_id)
     {
         $movie=Movie::find($movie_id);
+        $sobi=Movie::all();
         // dd($movie);
 
        
-        return view('frontend.pages.details',compact('movie'));
+        return view('frontend.pages.details',compact('movie','sobi'));
     }
 
     public function profile()
@@ -131,5 +133,10 @@ class WebsiteController extends Controller
 
         notify()->success('User profile updated.');
         return redirect()->back();
+    }
+    public function price()
+    {
+        return view('frontend.pages.price');
+        dd('Ticket Price');
     }
 }

@@ -20,10 +20,8 @@
         <input value="{{$product->name}}" required name="name" type="text" class="form-control" id="name" placeholder="Enter Movie Name">
     </div>
 
-    <div class="form-group">
-        <label for="price">Enter Movie Ticket Price</label>
-        <input value="{{$product->price}}" required name="price" type="number" class="form-control" id="price" placeholder="Enter Movie Ticket Price">
-    </div>
+    
+
 
     <div class="form-group">
         <label for="name">Enter Movie Duration</label>

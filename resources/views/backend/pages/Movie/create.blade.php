@@ -38,10 +38,14 @@
         </select>
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="price">Enter Movie Ticket Price</label>
-        <input required name="price" type="number" class="form-control" id="price" placeholder="Enter Movie Ticket Price">
-    </div>
+        <select name="price" id="" class="form-control">
+            <option value="350">E-REAR</option>
+            <option value="300">E-FRONT</option>
+           
+        </select>
+    </div> -->
     <div class="form-group">
         <label for="price">Enter Movie Director Names</label>
         <input required name="director" type="text" class="form-control" id="director" placeholder="Enter Movie Director Names">

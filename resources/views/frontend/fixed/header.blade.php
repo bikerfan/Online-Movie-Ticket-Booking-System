@@ -78,7 +78,7 @@
                   </ul>
                </li>
                <li><a href="https://blockbusterbd.com/schedule" class="common-loader">Schedule</a></li>
-               <li><a href="https://blockbusterbd.com/ticket-price" class="common-loader">Ticket Price</a></li>
+               <li><a href="{{route('price')}}" class="common-loader">Ticket Price</a></li>
                <li><a href="https://blockbusterbd.com/contact-us" class="common-loader">Contact us</a></li>
             </ul>
          </div>

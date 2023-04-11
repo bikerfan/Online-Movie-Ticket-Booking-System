@@ -29,7 +29,6 @@ class MovieController extends Controller
 // dd($request->all());
         $request->validate([
             'name' => 'required',
-            'price' => 'required|numeric',
             'category_id' => 'required',
 //            'image'=>'required|mimes:jpeg,jpg,png,gif'
             'image'=>'required'
@@ -52,7 +51,6 @@ class MovieController extends Controller
             'name' => $request->name,
             'image' => $fileName,
             // 'user_id' => auth()->user()->id,
-            'price' => $request->price,
             'status' => 'inactive',
             'description' => $request->description,
             'schedule'=>$request->schedule,
@@ -127,7 +125,6 @@ class MovieController extends Controller
             'name' => $request->name,
             'image' => $fileName,
             'category_id' => $request->category_id,
-            'price' => $request->price,
             'status' => $request->status,
             'description' => $request->description,
             'schedule'=>$request->schedule,

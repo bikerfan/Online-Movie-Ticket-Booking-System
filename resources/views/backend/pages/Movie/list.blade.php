@@ -20,7 +20,6 @@
             <th scope="col">#</th>
             <th scope="col">Image</th>
             <th scope="col">Name</th>
-            <th scope="col">Price</th>
             <th scope="col">Category Name</th>
             <th scope="col">Director</th>
             <th scope="col">Status</th>
@@ -40,7 +39,6 @@
                 <img width="100px" style="border-radius: 10px" src="{{url('/uploads/'.$data->image)}}" alt="Movie_image">
             </td>
             <td>{{$data->name}}</td>
-            <td>{{$data->price}} BDT</td>
             <td>{{$data->categoryRelation->name}}</td>
             <td>{{$data->director}}</td>
             <td>{{$data->status}}</td>
