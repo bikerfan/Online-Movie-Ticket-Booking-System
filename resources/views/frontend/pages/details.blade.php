@@ -58,17 +58,6 @@
 
 
 
-                    <!-- End of Amazing Slider Code -->
-                    <div class="row" style="border-top:1px solid #f2f2f2; padding:0 0px 25px 0;margin:0 auto; text-align:center;">
-<<<<<<< HEAD
-                        <a href="#">
-
-=======
-                        <a href="{{route('buynow')}}">
->>>>>>> 01db464a45ea5a6c8d08f0b1d03c1514f32d1146
-                            <img src="https://blockbusterbd.com/uploads/movies/buy_now_button.png">
-                        </a>
-                    </div>
 
                     <div class="row" style="border-top:1px solid #f2f2f2; margin-top:0px; padding-left:10px;">
 
@@ -83,14 +72,14 @@
                             <input type="hidden" name="_token" value="xkC4nPJztfQSVaT1qEhxAcoP7uEwg89PHen4SvbU">
                             <div class="row">
 
-                            @foreach($sobi as $data)
                                 <div class="col-md-12">
                                     <h3>Choose your Tickets</h3>
                                     <div class="form-group">
                                         <select class="form-control movie-name buy-ticket" name="movie_id" required="required">
                                             <option value="">Select a Movies</option>
-                                            <option  value="{{$data->name}}">{{$data->name}}</option>
-                                            
+                                            @foreach($sobi as $data)
+                                            <option  value="{{$data->id}}" @if(\request()->movie_id == $data->id) selected @endif>{{$data->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
@@ -101,7 +90,6 @@
                                             <option value="11-04-2023">Tuesday 11th April, 2023</option>
                                             <option value="12-04-2023">Wednesday 12th April, 2023</option>
                                             <option value="13-04-2023">Thursday 13th April, 2023</option>
-
                                         </select>
                                     </div>
 
@@ -154,10 +142,10 @@
                                     </div>
 
 
-                                    <button type="submit" name="Next" class="btn btn-danger  add-to-cart-ticket-btn"> Next </button>
+                                    <button type="submit" name="Next" class="btn btn-info  add-to-cart-ticket-btn"> Next </button>
 
                                 </div>
-                                @endforeach
+                                
                             </div>
 
 

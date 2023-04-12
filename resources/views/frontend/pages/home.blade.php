@@ -68,11 +68,11 @@
 
             
             <div class="row">
-                <div class="col-md-4" id="strip_activities">
+                <div class="col-md-12" id="strip_activities">
                     <h2><a href="https://blockbusterbd.com/next-arrival">Now Showing</a></h2>
                     <div class="row">
                         @foreach($up as $coming)
-                        <div class="col-lg-6 col-md-12 col-sm-6">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
                             <section class="box_cat_wp">
                                 <div class="box_cat cat-hover">
                                     <a class="cat-overlay" href="{{route('details',$coming->id)}}">
@@ -88,22 +88,6 @@
                         @endforeach
                     </div>
                 </div>
-<<<<<<< HEAD
-                
-=======
-                <div class="col-md-8" style="padding-top:30px">
-                    <p class="text-center">
-                        <a href="{{route('buynow')}}"class="btn btn-success">
-                            <img class="lazy common-loader" height="200px" src="https://blockbusterbd.com/assets/web/img/Buy-Tickets-Now1.png" alt="" class="w-100">
-                        </a>
-                    </p>
-                    <p class="text-center">
-                        <a href="https://blockbusterbd.com/club-royale">
-                            <img src="https://blockbusterbd.com/assets/web/img/royal_club_icon.png" alt="" class="w-100">
-                        </a>
-                    </p>
-                </div>
->>>>>>> 01db464a45ea5a6c8d08f0b1d03c1514f32d1146
             </div>
             <!-- End row -->
         </div>

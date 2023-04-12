@@ -34,7 +34,7 @@
                 <li class="nav-item">
                 <a class="nav-link" href="{{route('category.list')}}">
                     <span data-feather="file" class="align-text-bottom"></span>
-                   Seat Catagory
+                   Schedule
                 </a>
             </li>
             <li class="nav-item">
