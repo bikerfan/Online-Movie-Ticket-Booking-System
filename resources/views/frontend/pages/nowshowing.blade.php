@@ -47,12 +47,12 @@
                     <div class="tab-content">
                         <div id="all" class="tab-pane active">
                             <div class="row showing-v2">
-                            @foreach($up as $coming)
+                                @foreach($up as $coming)
                                 <div class="col-md-3 col-sm-4 grid_bottom_margin">
 
 
                                     <h5 class="text_align_style_center">
-                                    {{$coming->name}}
+                                        {{$coming->name}}
                                     </h5>
                                     <div class="border_style_for_image">
                                         <a href="#">
@@ -61,17 +61,16 @@
                                     </div>
                                     <h6 class="uppercase_style text_align_style_center" style="margin-bottom:0;">Category</h6>
                                     <p class="text_align_style_center" style="margin-bottom:0;height: 41px;overflow: hidden;">
-                                    {{$coming->categoryRelation->name}}
+                                        {{$coming->categoryRelation->name}}
                                     </p>
                                     <h6 class="uppercase_style text_align_style_center" style="margin-bottom:0;">Details</h6>
                                     <p class="text_align_style_center" style="margin-bottom:0;height: 41px;overflow: hidden;">
-                                    {{$coming->description}}
+                                        {{$coming->description}}
                                     </p>
                                     <p class="text_align_style_center" style="margin-bottom:0;height: 35px;overflow: hidden;">
-                                        <a class="btn_1" href="{{route('details',$coming->id)}}">More</a>
-                                    </p>
-                                    </div>
-                                    @endforeach
+                                        <a class="btn_1" href="{{route('details',$coming->id)}}">Buy Ticket</a> </p>
+                                </div>
+                                @endforeach
 
 
 

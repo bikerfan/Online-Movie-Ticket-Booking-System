@@ -32,7 +32,7 @@
                    Movie Catagory
                 </a>
                 <li class="nav-item">
-                <a class="nav-link" href="{{route('category.list')}}">
+                <a class="nav-link" href="{{route('schedule')}}">
                     <span data-feather="file" class="align-text-bottom"></span>
                    Schedule
                 </a>

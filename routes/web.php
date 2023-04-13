@@ -69,6 +69,10 @@ Route::get('/Movie/list', [MovieController::class, 'list'])->name('Movie.list');
 Route::get('/Movie/create', [MovieController::class, 'create'])->name('Movie.create');
 Route::post('/Movie/store', [MovieController::class, 'store'])->name('Movie.store');
 
+Route::get('/schedule', [HomeController::class, 'schedule'])->name('schedule');
+Route::get('/schedule/create', [HomeController::class, 'create'])->name('create');
+Route::post('/schedule/store', [HomeController::class, 'store'])->name('store');
+
 Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct'])->name('admin.Movie.delete');
 Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
 Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');

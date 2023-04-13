@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ShowTime;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -56,4 +57,34 @@ class HomeController extends Controller
         // notify()->success('Logout Success.');
         return redirect()->route('login')->with('Logout Success.');
     }
+    public function schedule()
+    {
+        $time=ShowTime::all();
+        // dd($time);
+        return view('backend.pages.schedule-list',compact('time'));
+    }
+    public function create()
+    {
+
+        return view('backend.pages.schedule-create');
+    }
+    public function store(Request $request)
+    {
+    //    dd($request->all());
+        // $request->validate(['category_name'=>'required|unique:category_controllers,name',]);
+
+        ShowTime::create([
+            //database column name => input field name
+                'date'=>$request->date,
+                'status'=>$request->status,
+                'time'=>$request->time
+        ]);
+
+//        return redirect()->route('category.list');
+notify()->success('Schedule Created successfully.');
+
+        return redirect()->route('schedule');
+
+    }
+
 }
