@@ -1,4 +1,4 @@
-<?php
+ds<?php
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('date',20);
             $table->string('time',20);
             $table->string('status',20);
+            $table->string("seat",20)->nullable();
             $table->timestamps();
         });
     }

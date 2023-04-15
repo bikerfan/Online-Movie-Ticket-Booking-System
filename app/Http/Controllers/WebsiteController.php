@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use App\Models\User;
+use App\Models\ShowTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -113,8 +114,9 @@ class WebsiteController extends Controller
         $sobi=Movie::all();
         // dd($movie);
 
-       
-        return view('frontend.pages.details',compact('movie','sobi'));
+       $schedule = ShowTime::whereDate("date", ">=", now())->get();
+    //    dd($schedule);
+        return view('frontend.pages.details',compact('movie','sobi',"schedule"));
     }
 
     public function profile()

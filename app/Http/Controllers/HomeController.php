@@ -77,7 +77,8 @@ class HomeController extends Controller
             //database column name => input field name
                 'date'=>$request->date,
                 'status'=>$request->status,
-                'time'=>$request->time
+                'time'=>$request->time,
+                "seat" =>$request->seat
         ]);
 
 //        return redirect()->route('category.list');

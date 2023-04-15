@@ -69,7 +69,8 @@
                     </div>
                     <div class="col-md-7 col-sm-7">
                         <form action="https://blockbusterbd.com/add-tickets" method="post" class="buy-padding add-to-cart-ticket">
-                            <input type="hidden" name="_token" value="xkC4nPJztfQSVaT1qEhxAcoP7uEwg89PHen4SvbU">
+                            @csrf
+
                             <div class="row">
 
                                 <div class="col-md-12">
@@ -78,7 +79,7 @@
                                         <select class="form-control movie-name buy-ticket" name="movie_id" required="required">
                                             <option value="">Select a Movies</option>
                                             @foreach($sobi as $data)
-                                            <option  value="{{$data->id}}" @if(\request()->movie_id == $data->id) selected @endif>{{$data->name}}</option>
+                                            <option value="{{$data->id}}" @if(\request()->movie_id == $data->id) selected @endif>{{$data->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -87,9 +88,9 @@
                                         <img src="https://blockbusterbd.com/assets/web/css/loader/loader4.gif" alt="loader" class="input-loader">
                                         <select class="form-control movie-schedule buy-ticket" name="movieschedule" required="required">
                                             <option value="">Select Date</option>
-                                            <option value="11-04-2023">Tuesday 11th April, 2023</option>
-                                            <option value="12-04-2023">Wednesday 12th April, 2023</option>
-                                            <option value="13-04-2023">Thursday 13th April, 2023</option>
+                                            @foreach($schedule as $data)
+                                            <option value="{{$data->id}}">{{$data->date}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
 
@@ -98,6 +99,9 @@
 
                                         <select class="form-control movie-time buy-ticket" name="movietime" required="required">
                                             <option value="">Select Time</option>
+                                            <option value="9am-12pm">9am-12pm</option>
+                                            <option value="3pm-6pm">3pm-6pm</option>
+                                            <option value="7pm-10pm">7pm-10pm</option>
                                         </select>
                                     </div>
 
@@ -105,6 +109,8 @@
                                         <img src="https://blockbusterbd.com/assets/web/css/loader/loader4.gif" alt="loader" class="input-loader">
                                         <select class="form-control movie-seat-category movie-ticket-price" name="movie_seat_category" required="required">
                                             <option value="">Select Seat Category</option>
+                                            <option value="E Front">E Front</option>
+                                            <option value="E Rear">E Rear</option>
                                         </select>
                                     </div>
 
@@ -145,11 +151,11 @@
                                     <button type="submit" name="Next" class="btn btn-info  add-to-cart-ticket-btn"> Next </button>
 
                                 </div>
-                                
+
                             </div>
+                        </form>
 
-
-                            <!-- End row-->
+                        <!-- End row-->
 
                     </div>
                     <br />
