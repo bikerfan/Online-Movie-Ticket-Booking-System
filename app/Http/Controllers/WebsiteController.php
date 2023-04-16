@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BuyNow;
 use App\Models\Movie;
 use App\Models\User;
 use App\Models\ShowTime;
@@ -141,4 +142,31 @@ class WebsiteController extends Controller
         return view('frontend.pages.price');
         dd('Ticket Price');
     }
+
+    public function bookingDetails(){
+
+
+        return redirect()->route('frontend.pages.profile');
+
+
+    }
+public function OrderStore(Request $request){
+
+    //dd($request->all());
+
+     BuyNow::create([
+        'name'=>$request->name,
+        'date'=>$request->date,
+        'time'=>$request->time,
+        'seat'=>$request->seat,
+        'ticket'=>$request->ticket
+
+
+    ]);
+    return redirect()->back();
+
+
+
+}
+
 }

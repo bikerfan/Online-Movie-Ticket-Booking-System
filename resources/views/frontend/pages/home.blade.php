@@ -152,7 +152,7 @@
 
                             <p>
                                 &copy; 2023 Online Movie Ticket All rights reserved. Design &amp; Developed By
-                                <a target="_blank" href="#">Kowsar</a>
+                                <a target="_blank" href="#">Shithil</a>
                                 <br /><span style="font-size:10px; color:#000;">No part of this website may be reproduced in any form without our written permission. We may take all necessary legal actions against users who infringe or repeatedly infringe our copyrights or other intellectual property rights. </span>
                             </p>
                             <br />
