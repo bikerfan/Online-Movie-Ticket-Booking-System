@@ -74,6 +74,7 @@ Route::post('/Movie/store', [MovieController::class, 'store'])->name('Movie.stor
 Route::get('/schedule', [HomeController::class, 'schedule'])->name('schedule');
 Route::get('/schedule/create', [HomeController::class, 'create'])->name('create');
 Route::post('/schedule/store', [HomeController::class, 'store'])->name('store');
+route::get('/schedule/delete/{id}',[HomeController::class, 'delete'])->name('delete');
 
 Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct'])->name('admin.Movie.delete');
 Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');

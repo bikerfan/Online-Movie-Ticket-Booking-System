@@ -79,7 +79,7 @@
                                         <select class="form-control movie-name buy-ticket" name="name" required="required">
                                             <option value="">Select a Movies</option>
                                             @foreach($sobi as $data)
-                                            <option value="{{$data->id}}" @if(\request()->movie_id == $data->id) selected @endif>{{$data->name}}</option>
+                                            <option value="{{$data->name}}" @if(\request()->movie_id == $data->id) selected @endif>{{$data->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -89,7 +89,7 @@
                                         <select class="form-control movie-schedule buy-ticket" name="date" required="required">
                                             <option value="">Select Date</option>
                                             @foreach($schedule as $data)
-                                            <option value="{{$data->id}}">{{$data->date}}</option>
+                                            <option value="{{$data->date}}">{{$data->date}}</option>
                                             @endforeach
                                         </select>
                                     </div>

@@ -87,5 +87,9 @@ notify()->success('Schedule Created successfully.');
         return redirect()->route('schedule');
 
     }
+    public function delete($id){
+        Showtime::find($id)->delete();
+        return redirect()->back();
+    }
 
 }
