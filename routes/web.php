@@ -33,6 +33,9 @@ Route::get('/nowshowing',[WebsiteController::class,'nowshowing'])->name('nowshow
 Route::get('/ticket/price',[WebsiteController::class,'price'])->name('price');
 Route::get('/details/{movie_id}',[WebsiteController::class,'details'])->name('details');
 Route::post('/buy/now',[WebsiteController::class,'OrderStore'])->name('buy.now');
+Route::get('/booking/list',[HomeController::class,'OrderStore'])->name('booking.list');
+
+
 
 
 
@@ -80,5 +83,6 @@ Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct
 Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
 Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');
 Route::put('/Movie/update/{product_id}', [MovieController::class, 'update'])->name('Movie.update');
+
 });
 });

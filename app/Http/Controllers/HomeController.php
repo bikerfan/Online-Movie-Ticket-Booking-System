@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BuyNow;
 use App\Models\ShowTime;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -92,4 +93,11 @@ notify()->success('Schedule Created successfully.');
         return redirect()->back();
     }
 
+
+    public function OrderStore(){
+       
+        $movies=BuyNow::all();
+
+        return view('backend.pages.Movie.booking_list',compact('movies'));
+    }
 }

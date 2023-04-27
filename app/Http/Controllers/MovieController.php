@@ -41,7 +41,7 @@ class MovieController extends Controller
             $fileName=date('Ymdhmi').'.'.$request->file('image')->getClientOriginalExtension();
             $request->file('image')->move(public_path('/uploads'),$fileName);
         }
-// dd($fileName);
+//dd($request->all());
 
         //query builder-RAW query
         // eloquent ORM- Model Functions
@@ -49,6 +49,7 @@ class MovieController extends Controller
             // table column name=>input field er name
             'category_id' => $request->category_id,
             'name' => $request->name,
+            'price'=>$request->price,
             'image' => $fileName,
             // 'user_id' => auth()->user()->id,
             'status' => 'inactive',
