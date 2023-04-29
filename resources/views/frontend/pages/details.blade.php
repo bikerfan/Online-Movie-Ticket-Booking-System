@@ -68,7 +68,7 @@
 
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <form action="https://blockbusterbd.com/add-tickets" method="post" class="buy-padding add-to-cart-ticket">
+                        <form action="#" method="post" class="buy-padding add-to-cart-ticket">
                             @csrf
 
                             <div class="row">

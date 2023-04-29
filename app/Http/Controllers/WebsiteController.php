@@ -139,6 +139,11 @@ class WebsiteController extends Controller
     public function price()
     {
         return view('frontend.pages.price');
-        dd('Ticket Price');
+        // dd('Ticket Price');
+    }
+    public function schedule_list()
+    {
+        return view('frontend.pages.schedule-list');
+        // dd('Ticket Price');
     }
 }

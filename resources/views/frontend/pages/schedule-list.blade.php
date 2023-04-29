@@ -17,32 +17,94 @@
     </style>
     <div class="bg_gray">
         <div class="container">
-            <h3>Ticket Price</h3>
+            <h3>Schedule</h3>
             <br>
             <p style="margin-bottom:5px;"> Except Weekends and Other Holidays</p>
             <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <table class="table table-striped table-bordered table-condensed">
                         <thead>
-                            <p style="margin-bottom:0; padding:5px 7px; text-align:center; background:#a43943; color:#FFF;">2D MOVIES</p>
+                            <p style="margin-bottom:0; padding:5px 7px; text-align:center; background:#a43943; color:#FFF;">ShowTime</p>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>E-FRONT</td>
-                                <td>E-REAR</td>
+
+                                <th scope="col">Day</th>
+                                <th scope="col">Morning Show</th>
+                                <th scope="col">Evining Show</th>
+                                <th scope="col">Night Show</th>
                             </tr>
                             <tr>
-                                <td>BDT 300</td>
-                                <td>BDT 350</td>
+
+                                <td>Monday</td>
+                                <td>9AM-12AM</td>
+                                <td>3PM-6PM</td>
+                                <td>7PM-10PM</td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>Tuesday</td>
+                                <td>9AM-12AM</td>
+                                <td>3PM-6PM</td>
+                                <td>7PM-10PM</td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>Wednesday</td>
+                                <td>9AM-12AM</td>
+                                <td>3PM-6PM</td>
+                                <td>7PM-10PM</td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>Thursday</td>
+                                <td>9AM-12AM</td>
+                                <td>3PM-6PM</td>
+                                <td>7PM-10PM</td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>Friday</td>
+                                <td>9AM-12AM</td>
+                                <td>3PM-6PM</td>
+                                <td>7PM-10PM</td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>Saturday</td>
+                                <td>9AM-12AM</td>
+                                <td>3PM-6PM</td>
+                                <td>7PM-10PM</td>
+
+
+                            </tr>
+                            <tr>
+
+                                <td>Sunday</td>
+                                <td>OFF</td>
+                                <td>OFF</td>
+                                <td>OFF</td>
+
+
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-            
-            
-            
-           
+
+
+
+
         </div>
         <!-- End container -->
     </div>
@@ -138,5 +200,4 @@
     <!-- End footer -->
 </div>
 @endsection
-
 

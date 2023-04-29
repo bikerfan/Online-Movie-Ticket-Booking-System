@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Movie;
 use App\Models\ShowTime;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -11,8 +12,15 @@ class HomeController extends Controller
 {
     public function home()
     {
+        $totalmovie=Movie::where('status','active')->count();
+        $totaluser=User::where('role','user')->count();
+        // $totalcategories=Category::count();
+        // $totalSells=Sellpost::sum('decressed_stock');
+        $post=Movie::all();
+        $test=User::where('role','user')->get();
+        // dd($test);
 
-        return view('backend.pages.dashboard');
+        return view('backend.pages.dashboard',compact('totalmovie','totaluser','post','test'));
     }
 
     public function user()

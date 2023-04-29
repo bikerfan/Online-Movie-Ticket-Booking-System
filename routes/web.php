@@ -30,6 +30,7 @@ Route::get('/web-registration',[WebsiteController::class,'webregistration'])->na
 Route::post('/do-registration',[WebsiteController::class,'doregistration'])->name('do.registration');
 Route::get('/upcomming',[WebsiteController::class,'upcomming'])->name('upcomming');
 Route::get('/nowshowing',[WebsiteController::class,'nowshowing'])->name('nowshowing');
+Route::get('/schedule/list',[WebsiteController::class,'schedule_list'])->name('schedule.list');
 Route::get('/ticket/price',[WebsiteController::class,'price'])->name('price');
 Route::get('/details/{movie_id}',[WebsiteController::class,'details'])->name('details');
 
