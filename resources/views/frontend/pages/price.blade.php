@@ -19,7 +19,7 @@
         <div class="container">
             <h3>Ticket Price</h3>
             <br>
-            <p style="margin-bottom:5px;"> Except Weekends and Other Holidays</p>
+            <p style="margin-bottom:5px;"></p>
             <div class="col-md-12 col-sm-12">
                 <div class="row">
                     <table class="table table-striped table-bordered table-condensed">
@@ -33,7 +33,7 @@
                             </tr>
                             <tr>
                                 <td>BDT 300</td>
-                                <td>BDT 350</td>
+                                <td>BDT 300</td>
                             </tr>
                         </tbody>
                     </table>

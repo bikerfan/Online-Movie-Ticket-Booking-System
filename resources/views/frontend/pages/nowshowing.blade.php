@@ -68,7 +68,7 @@
                                         {{$coming->description}}
                                     </p>
                                     <p class="text_align_style_center" style="margin-bottom:0;height: 35px;overflow: hidden;">
-                                        <a class="btn_1" href="{{route('details',$coming->id)}}">Buy Ticket</a> </p>
+                                        <a class="btn_1" href="{{route('details',$coming->id)}}">MORE</a> </p>
                                 </div>
                                 @endforeach
 

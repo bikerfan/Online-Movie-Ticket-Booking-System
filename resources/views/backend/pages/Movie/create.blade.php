@@ -22,6 +22,11 @@
     </div>
 
     <div class="form-group">
+        <label for="name">Enter Price</label>
+        <input required name="price" type="number" class="form-control" id="name" placeholder="Enter Price">
+    </div>
+
+    <div class="form-group">
         <label for="name">Enter Movie Duration</label>
         <input required name="duration" type="text" class="form-control" id="name" placeholder="Enter Movie duration">
     </div>

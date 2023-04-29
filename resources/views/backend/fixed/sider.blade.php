@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('booking.list')}}">
                     <span data-feather="file" class="align-text-bottom"></span>
                     Ticket Booked List
                 </a>
@@ -31,7 +31,8 @@
                     <span data-feather="file" class="align-text-bottom"></span>
                    Movie Catagory
                 </a>
-                <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('schedule')}}">
                     <span data-feather="file" class="align-text-bottom"></span>
                    Schedule
@@ -40,10 +41,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <span data-feather="file" class="align-text-bottom"></span>
-                    Contact Us
+                    Report
                 </a>
             </li>
-         
 
         </ul>
 

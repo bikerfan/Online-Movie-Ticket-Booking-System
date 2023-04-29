@@ -33,6 +33,11 @@ Route::get('/nowshowing',[WebsiteController::class,'nowshowing'])->name('nowshow
 Route::get('/schedule/list',[WebsiteController::class,'schedule_list'])->name('schedule.list');
 Route::get('/ticket/price',[WebsiteController::class,'price'])->name('price');
 Route::get('/details/{movie_id}',[WebsiteController::class,'details'])->name('details');
+Route::post('/buy/now',[WebsiteController::class,'OrderStore'])->name('buy.now');
+Route::get('/booking/list',[HomeController::class,'OrderStore'])->name('booking.list');
+
+
+
 
 
 
@@ -73,10 +78,12 @@ Route::post('/Movie/store', [MovieController::class, 'store'])->name('Movie.stor
 Route::get('/schedule', [HomeController::class, 'schedule'])->name('schedule');
 Route::get('/schedule/create', [HomeController::class, 'create'])->name('create');
 Route::post('/schedule/store', [HomeController::class, 'store'])->name('store');
+route::get('/schedule/delete/{id}',[HomeController::class, 'delete'])->name('delete');
 
 Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct'])->name('admin.Movie.delete');
 Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
 Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');
 Route::put('/Movie/update/{product_id}', [MovieController::class, 'update'])->name('Movie.update');
+
 });
 });

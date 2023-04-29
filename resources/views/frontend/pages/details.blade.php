@@ -68,7 +68,7 @@
 
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <form action="#" method="post" class="buy-padding add-to-cart-ticket">
+                        <form action="https://blockbusterbd.com/add-tickets" method="post" class="buy-padding add-to-cart-ticket">
                             @csrf
 
                             <div class="row">
@@ -76,20 +76,20 @@
                                 <div class="col-md-12">
                                     <h3>Choose your Tickets</h3>
                                     <div class="form-group">
-                                        <select class="form-control movie-name buy-ticket" name="movie_id" required="required">
+                                        <select class="form-control movie-name buy-ticket" name="name" required="required">
                                             <option value="">Select a Movies</option>
                                             @foreach($sobi as $data)
-                                            <option value="{{$data->id}}" @if(\request()->movie_id == $data->id) selected @endif>{{$data->name}}</option>
+                                            <option value="{{$data->name}}" @if(\request()->movie_id == $data->id) selected @endif>{{$data->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
 
                                     <div class="form-group movie-schedule-info">
                                         <img src="https://blockbusterbd.com/assets/web/css/loader/loader4.gif" alt="loader" class="input-loader">
-                                        <select class="form-control movie-schedule buy-ticket" name="movieschedule" required="required">
+                                        <select class="form-control movie-schedule buy-ticket" name="date" required="required">
                                             <option value="">Select Date</option>
                                             @foreach($schedule as $data)
-                                            <option value="{{$data->id}}">{{$data->date}}</option>
+                                            <option value="{{$data->date}}">{{$data->date}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -97,8 +97,8 @@
                                     <div class="form-group movie-time-info">
                                         <img src="https://blockbusterbd.com/assets/web/css/loader/loader4.gif" alt="loader" class="input-loader">
 
-                                        <select class="form-control movie-time buy-ticket" name="movietime" required="required">
-                                            <option value="">Select Time</option>
+                                        <select class="form-control movie-time buy-ticket" name="time" required="required">
+                                            <option value="time">Select Time</option>
                                             <option value="9am-12pm">9am-12pm</option>
                                             <option value="3pm-6pm">3pm-6pm</option>
                                             <option value="7pm-10pm">7pm-10pm</option>
@@ -107,7 +107,7 @@
 
                                     <div class="form-group movie-seat-category-info">
                                         <img src="https://blockbusterbd.com/assets/web/css/loader/loader4.gif" alt="loader" class="input-loader">
-                                        <select class="form-control movie-seat-category movie-ticket-price" name="movie_seat_category" required="required">
+                                        <select class="form-control movie-seat-category movie-ticket-price" name="seat" required="required">
                                             <option value="">Select Seat Category</option>
                                             <option value="E Front">E Front</option>
                                             <option value="E Rear">E Rear</option>
@@ -116,7 +116,7 @@
 
                                     <div class="form-group movie-ticket-number-info">
                                         <img src="https://blockbusterbd.com/assets/web/css/loader/loader4.gif" alt="loader" class="input-loader">
-                                        <select class="form-control movie-ticket-number movie-ticket-price" name="movie_ticket_number" required="required">
+                                        <select class="form-control movie-ticket-number movie-ticket-price" name="ticket" required="required">
                                             <option value="">No. of Tickets</option>
 
                                             <option value="1">01</option>
@@ -148,7 +148,7 @@
                                     </div>
 
 
-                                    <button type="submit" name="Next" class="btn btn-info  add-to-cart-ticket-btn"> Next </button>
+                                    <button type="submit" class="btn btn-info"> BUY NOW </button>
 
                                 </div>
 

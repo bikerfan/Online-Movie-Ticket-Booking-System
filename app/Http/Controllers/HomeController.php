@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BuyNow;
 use App\Models\Movie;
 use App\Models\ShowTime;
 use App\Models\User;
@@ -95,5 +96,16 @@ notify()->success('Schedule Created successfully.');
         return redirect()->route('schedule');
 
     }
+    public function delete($id){
+        Showtime::find($id)->delete();
+        return redirect()->back();
+    }
 
+
+    public function OrderStore(){
+       
+        $movies=BuyNow::all();
+
+        return view('backend.pages.Movie.booking_list',compact('movies'));
+    }
 }
