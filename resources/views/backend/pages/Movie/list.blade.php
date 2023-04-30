@@ -26,7 +26,7 @@
             <th scope="col">Description</th>
             <th scope="col">Schedule</th>
             <th scope="col">Duration</th>
-            <th scope="col">Action</th>
+            <th scope="col" width="20%">Action</th>
         </tr>
         </thead>
         <tbody>

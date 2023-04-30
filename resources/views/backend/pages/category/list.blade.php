@@ -28,12 +28,8 @@
             <td>{{$data->name}}</td>
             <td>{{$data->status}}</td>
             <td>
-                 <a href="" class="btn btn-primary">
-                   View
-                </a>
-                <a href="" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-warning">Edit</a>
-
+                <a href="{{route('category.edit', $data->id)}}" class="btn btn-info">Edit</a>
+                <a href="{{route('category.destroy', $data->id)}}" class="btn btn-danger">Delete</a>
             </td>
 
         </tr>

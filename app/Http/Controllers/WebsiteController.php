@@ -24,6 +24,7 @@ class WebsiteController extends Controller
 
         return view('frontend.pages.login');
     }
+    
     public function websitelogin(Request $request)
     {
                 // dd($request->all());

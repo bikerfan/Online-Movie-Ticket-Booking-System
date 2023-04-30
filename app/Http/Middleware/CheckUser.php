@@ -11,7 +11,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class CheckAdmin
+class CheckUser
 {
     /**
      * Handle an incoming request.
@@ -25,7 +25,7 @@ class CheckAdmin
         if(auth()->user()->role == 'user'){
             return $next($request);
         }
-        notify()->error('Your are not User, Registration First');
+        notify()->error('Your are not User, login as a User First');
         return redirect()->route('webhome');
     }
 }

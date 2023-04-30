@@ -81,7 +81,7 @@ class HomeController extends Controller
     }
     public function store(Request $request)
     {
-    //    dd($request->all());
+        //    dd($request->all());
         // $request->validate(['category_name'=>'required|unique:category_controllers,name',]);
 
         ShowTime::create([
@@ -92,12 +92,31 @@ class HomeController extends Controller
                 "seat" =>$request->seat
         ]);
 
-//        return redirect()->route('category.list');
-notify()->success('Schedule Created successfully.');
+        //        return redirect()->route('category.list');
+        notify()->success('Schedule Created successfully.');
 
         return redirect()->route('schedule');
 
     }
+
+    public function schedule_edit($id){
+        $schedule = ShowTime::find($id);
+        return view('backend.pages.schedule-edit', compact('schedule'));
+
+    }
+
+    public function schedule_update(Request $request, $id){
+        $schedule = ShowTime::findOrFail($id);
+        $schedule->date =  $request->date;
+        $schedule->status =  $request->status;
+        $schedule->time =  $request->time;
+        $schedule->seat =  $request->seat;
+        $schedule->save();
+        
+        notify()->success('Schedule Updated successfully.');
+        return redirect()->route('schedule');
+    }
+
     public function delete($id){
         Showtime::find($id)->delete();
         return redirect()->back();

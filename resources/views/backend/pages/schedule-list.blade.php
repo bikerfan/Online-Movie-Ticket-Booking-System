@@ -2,13 +2,10 @@
 
 @section('content')
 
-    <h1>Category List</h1>
-
-
-        <a href="{{route('create')}}" class="btn btn-success">
+    <h2 class="mb-3">Schedule List</h2>
+    <a href="{{route('create')}}" class="btn btn-success">
         Create New Movie Schedule
     </a>
-
 
     <table class="table table-striped">
         <thead>
@@ -30,12 +27,8 @@
             <td>{{$data->status}}</td>
             <td>{{$data->time}}</td>
             <td>
-                 <a href="" class="btn btn-primary">
-                   View
-                </a>
                 <a href="{{route('delete',$data->id)}}" class="btn btn-danger">Delete</a>
-                <a href="" class="btn btn-warning">Edit</a>
-
+                <a href="{{route('schedule.edit', $data->id)}}" class="btn btn-info">Edit</a>
             </td>
 
         </tr>
