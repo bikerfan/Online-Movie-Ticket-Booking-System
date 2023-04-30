@@ -13,12 +13,14 @@ class HomeController extends Controller
 {
     public function home()
     {
-        $totalmovie=Movie::where('status','active')->count();
+        //$totalmovie=Movie::where('status','active')->count();
         $totaluser=User::where('role','user')->count();
         // $totalcategories=Category::count();
         // $totalSells=Sellpost::sum('decressed_stock');
         $post=Movie::all();
         $test=User::where('role','user')->get();
+
+        $totalmovie = Movie::all()->count();
         // dd($test);
 
         return view('backend.pages.dashboard',compact('totalmovie','totaluser','post','test'));

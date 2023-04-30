@@ -14,6 +14,7 @@
         <tr>
             <th scope="col">id</th>
             <th scope="col">Movie Name</th>
+            <th scope="col">User</th>
             <th scope="col">date</th>
             <th scope="col">Time</th>
             <th scope="col">No Of Ticket</th>
@@ -31,6 +32,7 @@
 
                 
             <td>{{$data->name}}</td>
+            <td>{{$data->user?->name}}</td>
             <td>{{$data->date}}</td>
             <td>{{$data->time}}</td>
             <td>{{$data->ticket}}</td>

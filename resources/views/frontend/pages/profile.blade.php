@@ -67,7 +67,39 @@
 
             </div>
         </div>
-
+        <div class="mt-4">
+        <div>
+            <h1>My Booking list</h1>
+        </div>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                <th scope="col">SL</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Seat</th>
+                <th scope="col">Ticket</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach($BookingInfo as $key=>$data)
+                <tr>
+                <th scope="row">{{$key+1}}</th>
+                <td>{{$data->name}}</td>
+                <td>{{$data->date}}</td>
+                <td>{{$data->time}}</td>
+                <td>{{$data->seat}}</td>
+                <td>{{$data->ticket}}</td>
+                <td>{{$data->amount}}</td>
+                <td>{{$data->status}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+            </table>
+        </div>
     </div>
 </div>
     <div class="row">
@@ -87,6 +119,7 @@
     </div>
     <!-- End row -->
 </div>
+
 <!-- End container -->
 </footer>
 <!-- End footer -->

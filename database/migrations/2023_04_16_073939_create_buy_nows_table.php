@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('buy_nows', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->foreignId('user_id');
             $table->string('date');
             $table->string('time');
             $table->string('seat');
+            $table->string('transaction_id');
+            $table->double('amount');
+            $table->string('status');
             $table->string('ticket');
             $table->timestamps();
         });

@@ -47,6 +47,11 @@
                         {{$movie->duration}}
                     </p>
 
+                    <h4 style="margin-bottom:0;" class="uppercase_style text_align_style_center">Price</h4>
+                    <p style="margin-bottom:0; font-size:15px;" class="text_align_style_center">
+                        {{$movie->price}} BDT
+                    </p>
+
 
                     <h4 style="margin-bottom:0;" class="uppercase_style text_align_style_center">Category</h4>
                     <p style="font-size:15px;" class="text_align_style_center">
@@ -68,7 +73,7 @@
 
                     </div>
                     <div class="col-md-7 col-sm-7">
-                        <form action="{{route('buy.now')}}" method="post" class="buy-padding add-to-cart-ticket">
+                        <form action="{{route('pay.now')}}" method="post" class="buy-padding add-to-cart-ticket">
                             @csrf
 
                             <div class="row">
@@ -92,6 +97,10 @@
                                             <option value="{{$data->date}}">{{$data->date}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+
+                                    <div>
+                                        <input type="number" name="transaction_id">
                                     </div>
 
                                     <div class="form-group movie-time-info">
@@ -140,6 +149,14 @@
                                             <option value="10">10</option>
                                         </select>
                                     </div>
+
+                                    <div>
+                                    <input type="text" name="price">
+                                    </div>
+                                    <div>
+                                        <input type="text" name="status">
+                                    </div>
+
                                     <div class="manage-ticket-price">
                                         <div class="alert alert-success manage-ticket-success" role="alert">
                                             <p class="manage-movie-price"> Ticket Price : <b class="m-price"></b></p>

@@ -122,7 +122,8 @@ class WebsiteController extends Controller
 
     public function profile()
     {
-        return view('frontend.pages.profile');
+        $BookingInfo = BuyNow::where('user_id', auth()->user()->id)->get(); 
+        return view('frontend.pages.profile', compact('BookingInfo'));
     }
     public function updateProfile(Request $request)
     {
@@ -161,10 +162,14 @@ public function OrderStore(Request $request){
 
      BuyNow::create([
         'name'=>$request->name,
+        "user_id" => auth()->user()->id,
         'date'=>$request->date,
         'time'=>$request->time,
         'seat'=>$request->seat,
-        'ticket'=>$request->ticket
+        'ticket'=>$request->ticket,
+        'transaction_id'=>$request->transaction_id,
+        'price'=>$request->pice,
+        'status'=>$request->status
 
 
     ]);
