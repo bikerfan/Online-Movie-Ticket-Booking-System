@@ -32,6 +32,9 @@
                 <th scope="col">User Name</th>
                 <th scope="col">Movie Name</th>
                 <th scope="col">Total Ticket</th>
+                <th scope="col">Time</th>
+                <th scope="col">Buying Date</th>
+                <th scope="col">Watch Date</th>
                 <th scope="col">Row</th>
                 <th scope="col">Total Price</th>
             </tr>
@@ -44,6 +47,9 @@
                 <td>{{$data->user?->name}}</td>
                 <td>{{$data->name}}</td>
                 <td>{{$data->ticket}}</td>
+                <td>{{$data->time}}</td>
+                <td>{{$data->created_at}}</td>
+                <td>{{$data->date}}</td>
                 <td>{{$data->seat}}</td>
                 <td>{{$data->amount * $totalbooked}}</td>
             </tr>
