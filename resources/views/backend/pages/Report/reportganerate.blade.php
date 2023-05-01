@@ -38,7 +38,7 @@
                 <td>{{$data->user?->name}}</td>
                 <td>{{$data->name}}</td>
                 <td>{{$totalbooked}}</td>
-                <td>{{$data->amount * $data->seat}}</td>
+                <td>{{$data->amount * $data->ticket}}</td>
             </tr>
             @endforeach
 

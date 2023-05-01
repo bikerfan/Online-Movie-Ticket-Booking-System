@@ -51,7 +51,7 @@
                 <td>{{$data->created_at}}</td>
                 <td>{{$data->date}}</td>
                 <td>{{$data->seat}}</td>
-                <td>{{$data->amount * $data->seat}}</td>
+                <td>{{$data->amount * $data->ticket}}</td>
             </tr>
             @endforeach
             @endif
