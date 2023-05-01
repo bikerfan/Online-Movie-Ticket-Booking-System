@@ -12,11 +12,19 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-3">
         <div class="card text-dark bg-info mb-3 p-4" style="max-width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title fs-5 fw-semibold">Total user</h5>
                 <p class="card-text fw-bold fs-5 text-dark ">{{$totaluser}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card text-dark bg-info mb-3 p-4" style="max-width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title fs-5 fw-semibold">Total Booked</h5>
+                <p class="card-text fw-bold fs-5 text-dark ">{{$totalbooked}}</p>
             </div>
         </div>
     </div>

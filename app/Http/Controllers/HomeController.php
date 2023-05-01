@@ -15,7 +15,7 @@ class HomeController extends Controller
     {
         //$totalmovie=Movie::where('status','active')->count();
         $totaluser=User::where('role','user')->count();
-        // $totalcategories=Category::count();
+        $totalbooked=BuyNow::count();
         // $totalSells=Sellpost::sum('decressed_stock');
         $post=Movie::all();
         $test=User::where('role','user')->get();
@@ -23,7 +23,7 @@ class HomeController extends Controller
         $totalmovie = Movie::all()->count();
         // dd($test);
 
-        return view('backend.pages.dashboard',compact('totalmovie','totaluser','post','test'));
+        return view('backend.pages.dashboard',compact('totalmovie','totaluser','post','test','totalbooked'));
     }
 
     public function user()

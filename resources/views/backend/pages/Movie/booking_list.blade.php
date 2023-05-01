@@ -18,6 +18,7 @@
             <th scope="col">date</th>
             <th scope="col">Time</th>
             <th scope="col">No Of Ticket</th>
+            <th scope="col">Amount</th>
             <th scope="col">Seat</th>
             
         </tr>
@@ -36,6 +37,7 @@
             <td>{{$data->date}}</td>
             <td>{{$data->time}}</td>
             <td>{{$data->ticket}}</td>
+            <td>{{$data->amount}}</td>
             <td>{{$data->seat}}</td>
             <td>
                 
