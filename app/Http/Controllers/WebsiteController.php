@@ -123,7 +123,7 @@ class WebsiteController extends Controller
 
     public function profile()
     {
-        $BookingInfo = BuyNow::where('user_id', auth()->user()->id)->get(); 
+        $BookingInfo = BuyNow::orderBy('id','desc')->where('user_id', auth()->user()->id)->get(); 
         return view('frontend.pages.profile', compact('BookingInfo'));
     }
     public function updateProfile(Request $request)

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Models\Movie;
+use App\Models\User;
+use Auth;
 
 class SslCommerzPaymentController extends Controller
 {
@@ -68,7 +70,8 @@ class SslCommerzPaymentController extends Controller
         $post_data['product_profile'] = "physical-goods";
 
         # OPTIONAL PARAMETERS
-        $post_data['value_a'] = "ref001";
+        $post_data['value_a'] = Auth::user()->id;
+        // $post_data['value_a'] = "ref001";
         $post_data['value_b'] = "ref002";
         $post_data['value_c'] = "ref003";
         $post_data['value_d'] = "ref004";
@@ -143,7 +146,8 @@ class SslCommerzPaymentController extends Controller
         $post_data['product_profile'] = "physical-goods";
 
         # OPTIONAL PARAMETERS
-        $post_data['value_a'] = "ref001";
+        $post_data['value_a'] = Auth::user()->id;
+        // $post_data['value_a'] = "ref001";
         $post_data['value_b'] = "ref002";
         $post_data['value_c'] = "ref003";
         $post_data['value_d'] = "ref004";
@@ -189,6 +193,8 @@ class SslCommerzPaymentController extends Controller
             ->where('transaction_id', $tran_id)
             ->select('transaction_id', 'status', 'amount')->first();
 
+        Auth::login(User::find($request->value_a));
+
         if ($order_details->status == 'Pending') {
             $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
@@ -200,9 +206,11 @@ class SslCommerzPaymentController extends Controller
                 */
                 $update_product = DB::table('buy_nows')
                     ->where('transaction_id', $tran_id)
-                    ->update(['status' => 'Processing']);
+                    ->update(['status' => 'Paid']);
 
-                echo "<br >Transaction is successfully Completed";
+                // echo "<br >Transaction is successfully Completed";
+                notify()->success('Transaction is Completed successfully ');
+                return redirect()->route('user.profile');
             }
         } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
             /*

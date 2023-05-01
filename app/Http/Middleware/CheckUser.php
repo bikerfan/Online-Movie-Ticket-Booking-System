@@ -10,6 +10,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Auth;
 
 class CheckUser
 {
@@ -22,10 +23,12 @@ class CheckUser
      */
     public function handle(Request $request, Closure $next)
     {
-        if(auth()->user()->role == 'user'){
+        if (Auth::check() && auth()->user()->role == 'user' ) {
             return $next($request);
         }
+
         notify()->error('Your are not User, login as a User First');
-        return redirect()->route('webhome');
+        return redirect()->route('web.login');
+        
     }
 }

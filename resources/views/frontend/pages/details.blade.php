@@ -99,9 +99,9 @@
                                         </select>
                                     </div>
 
-                                    <div>
+                                    <!-- <div>
                                         <input type="number" name="transaction_id">
-                                    </div>
+                                    </div> -->
 
                                     <div class="form-group movie-time-info">
                                         <img src="https://blockbusterbd.com/assets/web/css/loader/loader4.gif" alt="loader" class="input-loader">
@@ -150,12 +150,12 @@
                                         </select>
                                     </div>
 
-                                    <div>
+                                    <!-- <div>
                                     <input type="text" name="price">
                                     </div>
                                     <div>
                                         <input type="text" name="status">
-                                    </div>
+                                    </div> --> 
 
                                     <div class="manage-ticket-price">
                                         <div class="alert alert-success manage-ticket-success" role="alert">
@@ -165,7 +165,7 @@
                                     </div>
 
 
-                                    <button type="submit" class="btn btn-info"> BUY NOW </button>
+                                    <button type="submit" class="btn btn-info" style="background-color: blue;"> BUY NOW </button>
 
                                 </div>
 

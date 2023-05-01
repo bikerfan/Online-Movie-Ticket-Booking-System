@@ -48,7 +48,7 @@ Route::get('/upcomming',[WebsiteController::class,'upcomming'])->name('upcomming
 Route::get('/nowshowing',[WebsiteController::class,'nowshowing'])->name('nowshowing');
 Route::get('/schedule/list',[WebsiteController::class,'schedule_list'])->name('schedule.list');
 Route::get('/ticket/price',[WebsiteController::class,'price'])->name('price');
-Route::get('/details/{movie_id}',[WebsiteController::class,'details'])->name('details');
+
 Route::post('/buy/now',[WebsiteController::class,'OrderStore'])->name('buy.now');
 Route::get('/booking/list',[HomeController::class,'OrderStore'])->name('booking.list');
 
@@ -58,16 +58,13 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::get('/logout', [WebsiteController::class, 'logout'])->name('user.logout');
 
-    Route::group(['middleware' => ['CheckUser']], function(){
-        Route::get('/profile',[WebsiteController::class,'profile'])->name('user.profile');
-        Route::put('/profile/update',[WebsiteController::class,'updateProfile'])->name('profile.update');
-        Route::get('/single/view/{id}', [WebsiteController::class, 'single_view'])->name('single.view');
+});
 
-
-
-
-
-    });
+Route::group(['middleware' => 'CheckUser'], function() {
+    Route::get('/profile',[WebsiteController::class,'profile'])->name('user.profile');
+    Route::put('/profile/update',[WebsiteController::class,'updateProfile'])->name('profile.update');
+    Route::get('/single/view/{id}', [WebsiteController::class, 'single_view'])->name('single.view');
+    Route::get('/details/{movie_id}',[WebsiteController::class,'details'])->name('details');
 
 });
 
@@ -78,46 +75,42 @@ Route::post('/admin/do-login', [HomeController::class, 'doLogin'])->name('do.log
 
 
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
-       Route::group(['middleware' => 'CheckAdmin'], function () {
+    Route::group(['middleware' => 'CheckAdmin'], function () {
 
+        Route::get('/logout',[HomeController::class,'logout'])->name('logout');
+        Route::get('/', [HomeController::class, 'home'])->name('dashboard');
+        Route::get('/user', [HomeController::class, 'user'])->name('user');
+        Route::get('/movie/list', [HomeController::class, 'movie_list'])->name('movie.list');
 
+        Route::get('/categories', [CategoryControllerController::class, 'list'])->name('category.list');
+        Route::get('/category/create', [CategoryControllerController::class, 'createForm'])->name('category.create');
+        Route::post('/category/store', [CategoryControllerController::class, 'store'])->name('category.store');
 
-Route::get('/logout',[HomeController::class,'logout'])->name('logout');
+        Route::get('/category/edit/{id}', [CategoryControllerController::class, 'edit'])->name('category.edit');
+        Route::post('/category/update/{id}', [CategoryControllerController::class, 'update'])->name('category.update');
 
+        Route::get('/category/destroy/{id}', [CategoryControllerController::class, 'destroy'])->name('category.destroy');
 
-Route::get('/', [HomeController::class, 'home'])->name('dashboard');
-Route::get('/user', [HomeController::class, 'user'])->name('user');
-Route::get('/movie/list', [HomeController::class, 'movie_list'])->name('movie.list');
+        Route::get('/report', [Homecontroller::class, 'report'])->name('report');
+        Route::get('/generatereport', [Homecontroller::class, 'generatereport'])->name('generatereport');
 
-Route::get('/categories', [CategoryControllerController::class, 'list'])->name('category.list');
-Route::get('/category/create', [CategoryControllerController::class, 'createForm'])->name('category.create');
-Route::post('/category/store', [CategoryControllerController::class, 'store'])->name('category.store');
+        Route::get('/Movie/list', [MovieController::class, 'list'])->name('Movie.list');
+        Route::get('/Movie/create', [MovieController::class, 'create'])->name('Movie.create');
+        Route::post('/Movie/store', [MovieController::class, 'store'])->name('Movie.store');
 
-Route::get('/category/edit/{id}', [CategoryControllerController::class, 'edit'])->name('category.edit');
-Route::post('/category/update/{id}', [CategoryControllerController::class, 'update'])->name('category.update');
+        Route::get('/schedule', [HomeController::class, 'schedule'])->name('schedule');
+        Route::get('/schedule/create', [HomeController::class, 'create'])->name('create');
+        Route::post('/schedule/store', [HomeController::class, 'store'])->name('store');
 
-Route::get('/category/destroy/{id}', [CategoryControllerController::class, 'destroy'])->name('category.destroy');
+        Route::get('/schedule/edit/{id}', [HomeController::class, 'schedule_edit'])->name('schedule.edit');
+        Route::post('/schedule/update/{id}', [HomeController::class, 'schedule_update'])->name('schedule.update');
 
-Route::get('/report', [Homecontroller::class, 'report'])->name('report');
-Route::get('/generatereport', [Homecontroller::class, 'generatereport'])->name('generatereport');
+        route::get('/schedule/delete/{id}',[HomeController::class, 'delete'])->name('delete');
 
-Route::get('/Movie/list', [MovieController::class, 'list'])->name('Movie.list');
-Route::get('/Movie/create', [MovieController::class, 'create'])->name('Movie.create');
-Route::post('/Movie/store', [MovieController::class, 'store'])->name('Movie.store');
+        Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct'])->name('admin.Movie.delete');
+        Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
+        Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');
+        Route::put('/Movie/update/{product_id}', [MovieController::class, 'update'])->name('Movie.update');
 
-Route::get('/schedule', [HomeController::class, 'schedule'])->name('schedule');
-Route::get('/schedule/create', [HomeController::class, 'create'])->name('create');
-Route::post('/schedule/store', [HomeController::class, 'store'])->name('store');
-
-Route::get('/schedule/edit/{id}', [HomeController::class, 'schedule_edit'])->name('schedule.edit');
-Route::post('/schedule/update/{id}', [HomeController::class, 'schedule_update'])->name('schedule.update');
-
-route::get('/schedule/delete/{id}',[HomeController::class, 'delete'])->name('delete');
-
-Route::get('/Movie/delete/{product_id}', [MovieController::class, 'deleteProduct'])->name('admin.Movie.delete');
-Route::get('/Movie/view/{product_id}', [MovieController::class, 'viewProduct'])->name('admin.Movie.view');
-Route::get('/Movie/edit/{product_id}', [MovieController::class, 'edit'])->name('Movie.edit');
-Route::put('/Movie/update/{product_id}', [MovieController::class, 'update'])->name('Movie.update');
-
-});
+    });
 });

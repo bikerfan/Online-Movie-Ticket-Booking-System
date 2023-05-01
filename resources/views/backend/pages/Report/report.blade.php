@@ -18,7 +18,7 @@
             <label for="sell_to">Data To</label>
             <input type="date" name="sell_to" class="form-control" id="sell_to" placeholder="Enter sale date to">
         </div>
-        <button type="submit" class="btn btn-success mx-2 my-4">Submit</button>
+        <button type="submit" class="btn btn-success mx-2 my-4" style="background-color: blue;">Submit</button>
 
     </div>
 </form>

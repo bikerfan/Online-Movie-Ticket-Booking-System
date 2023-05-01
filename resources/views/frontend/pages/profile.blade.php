@@ -59,7 +59,7 @@
 
                         <div class="mt-5 text-center">
                             <a class="btn btn-primary profile-button" href="{{route('webhome')}}">Back</a>
-                            <button class="btn btn-primary profile-button" type="submit">Update Profile</button>
+                            <button class="btn btn-info profile-button" type="submit" style="background-color: blue;">Update Profile</button>
 
                         </div>
                     </form>
