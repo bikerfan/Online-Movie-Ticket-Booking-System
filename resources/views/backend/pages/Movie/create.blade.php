@@ -89,6 +89,6 @@
 
 
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-info mt-3">Submit</button>
 </form>
 @endsection
