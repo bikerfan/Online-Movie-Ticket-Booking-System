@@ -28,10 +28,11 @@
     <table class="table">
         <thead class="thead-dark">
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">User Name</th>
                 <th scope="col">Movie Name</th>
-                <th scope="col">Total Sell</th>
+                <th scope="col">Total Ticket</th>
+                <th scope="col">Row</th>
                 <th scope="col">Total Price</th>
             </tr>
         </thead>
@@ -42,7 +43,8 @@
                 <th scope="row">{{$data->id}}</th>
                 <td>{{$data->user?->name}}</td>
                 <td>{{$data->name}}</td>
-                <td>{{$totalbooked}}</td>
+                <td>{{$data->ticket}}</td>
+                <td>{{$data->seat}}</td>
                 <td>{{$data->amount * $totalbooked}}</td>
             </tr>
             @endforeach

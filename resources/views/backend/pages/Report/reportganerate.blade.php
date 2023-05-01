@@ -23,24 +23,24 @@
 <h1>Report List</h1>
 <table class="table">
     <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Selling From</th>
-            <th scope="col">Total Sell</th>
-            <th scope="col">Total Price</th>
-            <th scope="col">Status</th>
-        </tr>
+    <tr>
+                <th scope="col">ID</th>
+                <th scope="col">User Name</th>
+                <th scope="col">Movie Name</th>
+                <th scope="col">Total Sell</th>
+                <th scope="col">Total Price</th>
+            </tr>
     </thead>
     <tbody>
-        @foreach($searchResult as $data)
-        <tr>
-            <th scope="row">{{$data->id}}</th>
-            <td>{{$data->created_at}}</td>
-            <td>{{$data->decressed_stock}}</td>
-            <td>{{$data->price * $data->decressed_stock}}</td>
-            <td>{{$data->status}}</td>
-        </tr>
-        @endforeach
+    @foreach($searchResult as $data)
+            <tr>
+                <th scope="row">{{$data->id}}</th>
+                <td>{{$data->user?->name}}</td>
+                <td>{{$data->name}}</td>
+                <td>{{$totalbooked}}</td>
+                <td>{{$data->amount * $totalbooked}}</td>
+            </tr>
+            @endforeach
 
     </tbody>
 </table>
