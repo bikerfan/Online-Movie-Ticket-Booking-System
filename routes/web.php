@@ -96,6 +96,8 @@ Route::post('/category/update/{id}', [CategoryControllerController::class, 'upda
 
 Route::get('/category/destroy/{id}', [CategoryControllerController::class, 'destroy'])->name('category.destroy');
 
+Route::get('/report', [Homecontroller::class, 'report'])->name('report');
+Route::get('/generatereport', [Homecontroller::class, 'generatereport'])->name('generatereport');
 
 Route::get('/Movie/list', [MovieController::class, 'list'])->name('Movie.list');
 Route::get('/Movie/create', [MovieController::class, 'create'])->name('Movie.create');

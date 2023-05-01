@@ -128,5 +128,40 @@ class HomeController extends Controller
         $movies=BuyNow::all();
 
         return view('backend.pages.Movie.booking_list',compact('movies'));
+    } public function report()
+    {
+        return view('backend.pages.Report.report'); 
+
     }
+    public function generatereport(Request $request)
+    {
+        // dd($request->all());
+
+        $validator = Validator::make($request->all(), [
+            'created_at'    => 'required|date',
+            'sell_to'      => 'required|date|after:created_at',
+        ]);
+
+        if($validator->fails())
+        {
+        //    notify()->error($validator->getMessageBag());
+            notify()->error('From date and to date required and to should greater then from date.');
+            return redirect()->back();
+        }
+
+
+
+       $from=$request->created_at;
+       $to=$request->sell_to;
+
+
+//       $status=$request->status;
+$totalbooked=BuyNow::count();
+
+        $searchResult=BuyNow::whereBetween('created_at', [$from, $to])->get();
+        return view('backend.pages.Report.report',compact('searchResult','totalbooked')); 
+
+    }
+
+
 }
