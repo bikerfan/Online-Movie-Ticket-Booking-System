@@ -35,7 +35,7 @@
                 <th scope="col">Time</th>
                 <th scope="col">Buying Date</th>
                 <th scope="col">Watch Date</th>
-                <th scope="col">Row</th>
+                <th scope="col">Seat</th>
                 <th scope="col">Total Price</th>
             </tr>
         </thead>

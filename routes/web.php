@@ -61,6 +61,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['middleware' => ['CheckUser']], function(){
         Route::get('/profile',[WebsiteController::class,'profile'])->name('user.profile');
         Route::put('/profile/update',[WebsiteController::class,'updateProfile'])->name('profile.update');
+        Route::get('/single/view/{id}', [WebsiteController::class, 'single_view'])->name('single.view');
+
 
 
 

@@ -181,5 +181,16 @@ public function OrderStore(Request $request){
 
 
 }
+public function single_view($id)
+{
+    // $BookingInfo = BuyNow::where('user_id', auth()->user()->id)->get(); 
+    $data=BuyNow::find($id);
+    // dd($data);
+
+
+    return view('frontend.pages.singleview',compact('data'));
+
+}
+
 
 }
